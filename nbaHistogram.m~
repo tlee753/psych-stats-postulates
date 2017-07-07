@@ -1,0 +1,15 @@
+function nbaHistogram()
+data = csvread('sportsAnalysisv1.csv', 1, 2);
+points = data(1:271, 2);
+rebounds = data(1:271, 15);
+assists = data(1:271, 16);
+
+score = points + rebounds * 2 + assists * 2.333;
+
+close all;
+figure;
+histogram(score);
+title('NBA Proprietary Score Histogram');
+xlabel('Proprietary Score');
+ylabel('Frequency');
+end
